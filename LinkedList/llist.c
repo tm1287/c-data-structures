@@ -55,14 +55,12 @@ LLNode* insertAfter(LLNode* head, int key, int val){
     newNode->value = val;
 
     LLNode* currentNode = head;
-    do {
-      if (currentNode->value == key){
-        newNode->next = currentNode->next;
-        currentNode->next = newNode;
-        break;
-      }
+    while(currentNode->value != key && currentNode->next != 0){
       currentNode = currentNode->next;
-    } while(currentNode->next != 0);
+    }
+
+    newNode->next = currentNode->next;
+    currentNode->next = newNode;
 
     return head;
   } else {
