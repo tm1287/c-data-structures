@@ -8,13 +8,12 @@ typedef struct LLNode {
   int value;
 } LLNode;
 
-void initList(LLNode* head);
-void clearList(LLNode* head);
-void insertFront(LLNode* head, int value);
-void insertBack(LLNode* head, int value);
-void insertAfter(LLNode* head, int key, int value);
-void removeItem(LLNode* head, int key);
+LLNode* initList(LLNode* head, int val);
+LLNode* clearList(LLNode* head);
+LLNode* insertFront(LLNode* head, int val);
+LLNode* insertBack(LLNode* head, int val);
+LLNode* insertAfter(LLNode* head, int key, int val);
+LLNode* removeItem(LLNode* head, int key);
 void printForwards(LLNode* head);
-void printBackwards(LLNode* head);
 
 #endif
