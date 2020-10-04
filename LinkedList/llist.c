@@ -36,9 +36,9 @@ LLNode* insertBack(LLNode* head, int val){
     newNode->next = NULL;
 
     LLNode* currentNode = head;
-    do {
+    while(currentNode->next != 0){
       currentNode = currentNode->next;
-    } while(currentNode->next != 0);
+    }
 
     currentNode->next = newNode;
 
@@ -97,6 +97,7 @@ LLNode* clearList(LLNode* head){
     prevCurrentNode=currentNode;
     currentNode=currentNode->next;
     free(prevCurrentNode);
+    //printf("Freeing %p\n", prevCurrentNode);
   }
   head = NULL;
   printf("List has been cleared.\n");
