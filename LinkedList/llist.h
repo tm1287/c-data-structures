@@ -14,6 +14,7 @@ LLNode* insertFront(LLNode* head, int val);
 LLNode* insertBack(LLNode* head, int val);
 LLNode* insertAfter(LLNode* head, int key, int val);
 LLNode* removeItem(LLNode* head, int key);
+LLNode* reverseList(LLNode* head);
 void printForwards(LLNode* head);
 
 #endif

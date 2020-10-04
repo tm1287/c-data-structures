@@ -15,6 +15,11 @@ int main(){
   headNode = removeItem(headNode, 9);
   printForwards(headNode);
   printf("-----------------\n");
+  headNode = reverseList(headNode);
+  printForwards(headNode);
   headNode = clearList(headNode);
+  printForwards(headNode);
+  headNode = insertBack(headNode, 3);
+  printForwards(headNode);
   return 0;
 }

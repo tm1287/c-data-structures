@@ -22,7 +22,6 @@ LLNode* insertFront(LLNode* head, int val){
     newNode->next = head;
     newNode->value = val;
     head = newNode;
-    printf("Inserted: %p -> %p\n", head, head->next);
 
     return head;
   } else {
@@ -116,4 +115,23 @@ void printForwards(LLNode* head){
   } else {
     printf("%s\n", "The list does not exist, must be initialized.");
   }
+}
+
+LLNode* reverseList(LLNode* head){
+  if(head != NULL){
+    LLNode* lastNode = NULL;
+    LLNode* currentNode = head;
+    LLNode* nextNode = NULL;
+
+    while(currentNode != 0){
+      nextNode = currentNode->next;
+      currentNode->next = lastNode;
+
+      lastNode = currentNode;
+      currentNode = nextNode;
+
+    }
+    head = lastNode;
+  }
+  return head;
 }
