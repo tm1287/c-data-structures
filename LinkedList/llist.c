@@ -69,6 +69,25 @@ LLNode* insertAfter(LLNode* head, int key, int val){
 }
 
 LLNode* removeItem(LLNode* head, int key){
+  if(head != NULL){
+    LLNode* currentNode = head;
+    LLNode* lastCurrentNode = head;
+
+    while(currentNode != 0){
+      if(currentNode->value == key){
+        lastCurrentNode->next = currentNode->next;
+        if(currentNode == lastCurrentNode){
+          head = currentNode->next;
+        }
+        free(currentNode);
+        break;
+      } else {
+        lastCurrentNode = currentNode;
+        currentNode = currentNode->next;
+      }
+    }
+  }
+
   return head;
 }
 

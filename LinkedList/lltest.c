@@ -11,6 +11,9 @@ int main(){
   headNode = insertBack(headNode, 2);
   headNode = insertAfter(headNode, 2, 9);
   printForwards(headNode);
+  printf("-----------------\n");
+  headNode = removeItem(headNode, 2);
+  printForwards(headNode);
 
   return 0;
 }
