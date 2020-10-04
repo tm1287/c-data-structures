@@ -5,7 +5,6 @@
 int main(){
   printf("%s\n", "Running the program now...");
   LLNode* headNode = NULL;
-  headNode = initList(headNode, 1);  // if headNode is not null, set the value to val or allocate it first
 
   char commands[16];
   while(scanf("%s", commands) == 1){
