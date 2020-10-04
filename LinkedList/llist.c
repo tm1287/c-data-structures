@@ -92,16 +92,28 @@ LLNode* removeItem(LLNode* head, int key){
 }
 
 LLNode* clearList(LLNode* head){
+  LLNode* prevCurrentNode = head;
+  LLNode* currentNode = head;
+  while(currentNode != 0) {
+    prevCurrentNode=currentNode;
+    currentNode=currentNode->next;
+    printf("Freeing Node: %p Value: %d\n", prevCurrentNode, prevCurrentNode->value);
+    free(prevCurrentNode);
+  }
+  head = NULL;
   return head;
 }
 
 void printForwards(LLNode* head){
-  LLNode* currentNode = head;
-  int counter = 0;
-  do {
-    printf("Node %d: %p Value: %d\n", counter, currentNode, currentNode->value);
-    currentNode = currentNode->next;
-    counter++;
-  } while(currentNode != 0);
-
+  if(head != NULL){
+    LLNode* currentNode = head;
+    int counter = 0;
+    do {
+      printf("Node %d: %p Value: %d\n", counter, currentNode, currentNode->value);
+      currentNode = currentNode->next;
+      counter++;
+    } while(currentNode != 0);
+  } else {
+    printf("%s\n", "The list does not exist, must be initialized.");
+  }
 }

@@ -12,8 +12,10 @@ int main(){
   headNode = insertAfter(headNode, 2, 9);
   printForwards(headNode);
   printf("-----------------\n");
-  headNode = removeItem(headNode, 2);
+  headNode = removeItem(headNode, 9);
   printForwards(headNode);
-
+  printf("-----------------\n");
+  headNode = clearList(headNode);
+  printForwards(headNode);
   return 0;
 }
