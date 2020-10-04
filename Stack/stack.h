@@ -12,7 +12,8 @@ typedef struct Stack {
 int isEmpty(Stack* stack);
 int isFull(Stack* stack);
 Stack* initStack(Stack* stack, unsigned capacity);
-Stack* push(Stack* stack, int item);
-Stack* pop(Stack* stack);
+void push(Stack* stack, int item);
+int pop(Stack* stack);
 int peek(Stack* stack);
+Stack* clearStack(Stack* stack);
 #endif

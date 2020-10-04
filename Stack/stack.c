@@ -2,38 +2,65 @@
 #include <stdio.h>
 
 Stack* initStack(Stack* stack, unsigned capacity) {
-  stack = (Stack*) malloc(sizeof(Stack));
-  stack->size = capacity;
-  stack->topIndex = -1;
-  stack->items = (int*) malloc(stack->size * sizeof(int));
-  printf("%u %d %d\n", stack->size, stack->topIndex, *stack->items);
+  if(stack == NULL){
+    stack = (Stack*) malloc(sizeof(Stack));
+    stack->size = capacity;
+    stack->topIndex = -1;
+    stack->items = (int*) malloc(stack->size * sizeof(int));
+  }
   return stack;
 }
 
 int isEmpty(Stack* stack){
-  return stack->topIndex == -1;
+  if(stack != NULL){
+    return stack->topIndex == -1;
+  } else {
+    return -1;
+  }
 }
 
 int isFull(Stack* stack){
-  return stack->topIndex+1 == (int) stack->size;
+  if(stack != NULL){
+    return stack->topIndex+1 == (int) stack->size;
+  } else {
+    printf("Stack is full\n");
+    return -1;
+  }
 }
 
-Stack* push(Stack* stack, int item){
-  if(!isFull(stack)){
-    stack->topIndex++;
-    stack->items[stack->topIndex] = item;
+void push(Stack* stack, int item){
+  if(stack != NULL){
+    if(!isFull(stack)){
+      stack->topIndex++;
+      stack->items[stack->topIndex] = item;
+    }
   }
-  return stack;
 }
 
-Stack* pop(Stack* stack){
-  if(!isEmpty(stack)){
-    stack->topIndex--;
-    stack->items[stack->topIndex];
+int pop(Stack* stack){
+  int poppedVal = -1;
+  if(stack != NULL){
+    if(!isEmpty(stack)){
+      poppedVal = stack->items[stack->topIndex];
+      stack->topIndex--;
+    }
   }
-  return stack;
+  return poppedVal;
 }
 
 int peek(Stack* stack){
-  return stack->items[stack->topIndex];
+  if(stack != NULL){
+    if(stack->topIndex != -1){
+      return stack->items[stack->topIndex];
+    } else {
+      return -1;
+    }
+  } else {
+    return -1;
+  }
+}
+
+Stack* clearStack(Stack* stack){
+  free(stack);
+  return NULL;
 }
