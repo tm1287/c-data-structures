@@ -97,10 +97,10 @@ LLNode* clearList(LLNode* head){
   while(currentNode != 0) {
     prevCurrentNode=currentNode;
     currentNode=currentNode->next;
-    printf("Freeing Node: %p Value: %d\n", prevCurrentNode, prevCurrentNode->value);
     free(prevCurrentNode);
   }
   head = NULL;
+  printf("List has been cleared.\n");
   return head;
 }
 

@@ -16,6 +16,5 @@ int main(){
   printForwards(headNode);
   printf("-----------------\n");
   headNode = clearList(headNode);
-  printForwards(headNode);
   return 0;
 }
