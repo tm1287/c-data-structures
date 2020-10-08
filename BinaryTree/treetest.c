@@ -4,14 +4,24 @@
 int main() {
   TreeNode* root = NULL;
   root = initTree(root, 1);
-  printf("%p %p\n", root->leftChild, root->rightChild);
   createLeftChild(root, 2);
-  printf("%p %p\n", root->leftChild, root->rightChild);
   createRightChild(root, 3);
-  printf("%p %p\n", root->leftChild, root->rightChild);
-  printf("%d %d\n", root->leftChild->value, root->rightChild->value);
-  TreeNode* found = search(root, 3);
+
+  createLeftChild(root->leftChild, 4);
+  createRightChild(root->leftChild, 5);
+
+  createLeftChild(root->rightChild, 6);
+  printf("%p\n", root->rightChild->leftChild);
+  createRightChild(root->rightChild, 7);
+  createRightChild(root->rightChild->rightChild, 8);
+  createRightChild(root->rightChild->rightChild->rightChild, 9);
+
+
+  TreeNode* found = search(root, 6);
   printf("%p %d\n", found, found->value);
+
+  traverse(root, 0);
+
 
 
 }

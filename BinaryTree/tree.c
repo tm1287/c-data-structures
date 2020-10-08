@@ -49,3 +49,16 @@ TreeNode* search(TreeNode* node, int key){
 
   return rightFound;
 }
+
+void traverse(TreeNode* node, int depth){
+  if(node != NULL){
+    printf("%d Depth: %d\n",node->value, depth);
+    depth++;
+    traverse(node->leftChild, depth);
+    traverse(node->rightChild, depth);
+    depth--;
+  } else {
+    printf("NULL   : %d\n", depth);
+  }
+
+}

@@ -13,5 +13,6 @@ TreeNode* initTree(TreeNode* root, int val);
 void createLeftChild(TreeNode* parent, int val);
 void createRightChild(TreeNode* parent, int val);
 TreeNode* search(TreeNode* node, int key);
+void traverse(TreeNode* node, int depth);
 
 #endif
